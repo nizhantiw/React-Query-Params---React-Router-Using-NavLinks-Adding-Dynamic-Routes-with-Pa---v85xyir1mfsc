@@ -1,18 +1,17 @@
 import React from 'react'
 import '../styles/App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
-  const queryParams = new URLSearchParams(window.location.search)
-  const id = queryParams.get("id")
-  const name = queryParams.get("name")
-  const designation = queryParams.get("designation")
-
   return (
-    <div className="App">
-      <p>Employee{id}{name}{designation}</p>
-    </div>
-  )
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
-
 export default App;
